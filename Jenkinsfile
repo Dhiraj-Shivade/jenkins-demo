@@ -8,6 +8,7 @@ pipeline {
                 sh 'chmod 400 script.sh'
                }
             }
+        }
         stage('Execute shell script') {
             steps {
                script{
