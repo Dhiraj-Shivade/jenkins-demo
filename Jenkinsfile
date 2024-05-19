@@ -1,8 +1,17 @@
 pipeline {
     agent any
-        stages ('Execute shell script') {
+    stages {
+        stage('Welcome') { 
             steps {
-                echo 'This is a Hello from Dhiraj'
+                echo 'Hi , You are inside the pipeline'
+            }
+        }
+        stage('build') {
+            steps {
+                script {
+                    docker.build('hello-world-app')
+                }
             }
         }
     }
+}
